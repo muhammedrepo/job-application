@@ -7,6 +7,8 @@ module.exports = {
       current: 'currentColor',
       white: '#ffffff',
       black: 'var(--black)',
+      danger: 'var(--red-light)',
+      red: 'var(--red-dark)',
       primary: {
         50: 'var(--primary-50)',
         100: 'var(--primary-100)',
@@ -30,14 +32,6 @@ module.exports = {
         700: 'var(--grey-700)',
         800: 'var(--grey-800)',
         900: 'var(--grey-900)',
-      },
-      green: {
-        light: 'var(--green-light)',
-        dark: 'var(--green-dark)',
-      },
-      red: {
-        light: 'var(--red-light)',
-        dark: 'var(--red-dark)',
       },
     },
     extend: {
