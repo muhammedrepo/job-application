@@ -1,4 +1,3 @@
-import cors from 'cors';
 import 'express-async-errors';
 import express from 'express';
 const app = express();
@@ -17,8 +16,7 @@ import jobsRouter from './routes/jobsRoutes.js';
 
 import notFoundMiddleware from './middleware/not-found.js';
 import errorHandlerMiddleware from './middleware/error-handler.js';
-
-app.use(cors());
+import authenticateUser from './middleware/auth.js';
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
@@ -30,10 +28,11 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/jobs', jobsRouter);
+app.use('/api/v1/jobs', authenticateUser, jobsRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
+
 const port = process.env.PORT || 5000;
 
 const start = async () => {
