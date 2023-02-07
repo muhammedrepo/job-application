@@ -8,7 +8,7 @@ function Button({ children, primary, hipster, outline, danger, ...rest }) {
       'bg-primary-500 text-white hover:bg-primary-700': primary,
       'bg-primary-200 text-primary-500 hover:bg-primary-700 hover:text-primary-200':
         hipster,
-      'bg-red-light text-red-light hover:bg-red-dark hover:text-white': danger,
+      'bg-danger text-red hover:bg-red hover:text-white': danger,
       'bg-transparent border-transparent text-primary-500 tracking-wider capitalize cursor-pointer':
         outline,
     }
